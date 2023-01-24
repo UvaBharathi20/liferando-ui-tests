@@ -22,14 +22,20 @@ public class RestaurantList {
     public static void selectTheCategory(String category) throws InterruptedException{
         if(category=="italian")
             driver.findElement(By.cssSelector(RestaurantListConstants.getItalianCategory())).click();
+        Thread.sleep(getWaitAfterClick());
     }
 
+    public static void validateMinimumOrderValue10() throws InterruptedException{
+        List<WebElement> minOrderValuesList = driver.findElements(By.cssSelector(RestaurantListConstants.getMOVTab()));
+        for (WebElement minOrderValue: minOrderValuesList)
+            Assert.assertFalse(!minOrderValue.getText().contains("Min. 10,00 €"), "Minimum order value more than 10 euro displayed");
+
+    }
     public static void validateSelectedCategory(String category) throws InterruptedException{
         Boolean restaurantHasCategory = false;
         List<WebElement> restaurantCuisineList = driver.findElements(By.cssSelector(RestaurantListConstants.getRestaurantCuisines()));
         for(WebElement restaurantCuisines: restaurantCuisineList) {
             List<WebElement>  cuisines = restaurantCuisines.findElements(By.cssSelector("span[data-qa=\"cuisine\"]"));
-            System.out.println("###");
             for(WebElement cuisine: cuisines){
                 if(cuisine.getText().contains(category))
                     restaurantHasCategory= true;

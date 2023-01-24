@@ -20,7 +20,7 @@ public class TestSearchWithMinimumOrderAmount {
 
     @AfterMethod
     public void tearDown() {
-        //Utils.quitDriver();
+        Utils.quitDriver();
     }
 
     @DataProvider(name = "user-details-provider")
@@ -35,5 +35,6 @@ public class TestSearchWithMinimumOrderAmount {
         SearchOption.enterAddressInSearchBar(address);
         SearchOption.selectAddress();
         RestaurantList.selectOption10AndLess();
+        RestaurantList.validateMinimumOrderValue10();
     }
 }

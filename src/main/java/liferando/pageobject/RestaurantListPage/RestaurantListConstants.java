@@ -8,6 +8,7 @@ public class RestaurantListConstants extends Constants {
     private static final String filterBy15AndLess = "label[for=\"radio_2\"]";
     private static final String italianCategory = "div[aria-label=\"Select Italian style pizza category\"]";
     private static final String restaurantCuisines = "div[data-qa=\"restaurant-cuisines\"]";
+    private static final String MOVTab = "[data-qa=\"mov-indicator\"]";
 
     public static String getFilterBy10AndLess() {
         return filterBy10AndLess;
@@ -17,5 +18,8 @@ public class RestaurantListConstants extends Constants {
     }
     public static String getRestaurantCuisines(){
         return restaurantCuisines;
+    }
+    public static String getMOVTab(){
+        return MOVTab;
     }
 }
