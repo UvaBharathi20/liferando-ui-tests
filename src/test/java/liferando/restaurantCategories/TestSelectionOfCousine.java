@@ -29,7 +29,7 @@ public class TestSelectionOfCousine {
     }
 
     @Test(dataProvider = "user-details-provider")
-    public void booking(String address, String category) throws InterruptedException {
+    public void CuisineSelectionTest(String address, String category) throws InterruptedException {
         acceptCookies();
         SearchOption.enterAddressInSearchBar(address);
         SearchOption.selectAddress();

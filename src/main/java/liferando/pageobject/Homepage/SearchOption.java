@@ -10,13 +10,14 @@ import static liferando.commonUtils.Constants.getWaitForNewPage;
 import static liferando.pageobject.DriverActions.entervalues;
 
 public class SearchOption {
-    static WebDriver driver = Utils.getDriver();
     public static void enterAddressInSearchBar(String address) throws InterruptedException{
+        WebDriver driver = Utils.getDriver();
         entervalues(driver.findElement(By.id(SearchOptionConstants.getSearchBoxId())), address);
         Thread.sleep(getWaitAfterClick());
     }
 
     public static void selectAddress() throws InterruptedException {
+        WebDriver driver = Utils.getDriver();
         driver.findElement(By.xpath(SearchOptionConstants.getAddressOption())).click();
         Thread.sleep(getWaitForNewPage());
     }

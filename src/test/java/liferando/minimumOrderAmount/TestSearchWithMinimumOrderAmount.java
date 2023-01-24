@@ -30,7 +30,7 @@ public class TestSearchWithMinimumOrderAmount {
 
 
     @Test(dataProvider = "user-details-provider")
-    public void booking(String address) throws InterruptedException {
+    public void minimumOrderValueTest(String address) throws InterruptedException {
         acceptCookies();
         SearchOption.enterAddressInSearchBar(address);
         SearchOption.selectAddress();
